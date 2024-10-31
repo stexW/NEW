@@ -1,0 +1,23 @@
+repeat task.wait(0.25) until game:IsLoaded();
+getgenv().CurrentVersion = "1.23";
+getgenv().Icon = "http://www.roblox.com/asset/?id=119333624150558";
+
+--------------------------------[ Main Loading UI ]------------------------------------
+loadstring(game:HttpGet("https://raw.githubusercontent.com/stexW/loader/refs/heads/main/flameshub"))();
+---------------------------------------------------------------------------------------
+
+local SupportedGames = {
+    A_Universal_Time = {6846458508,5130598377,8023712967};
+    Heaven_Stand = {14561998168};
+    Sakura_Stand = {8534845015};
+}
+
+if table.find(SupportedGames.A_Universal_Time,game.PlaceId) then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/stexW/aut/refs/heads/main/main"))();
+elseif table.find(SupportedGames.Heaven_Stand,game.PlaceId) then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/FlamesW/NEW/main/HS"))();
+elseif table.find(SupportedGames.Sakura_Stand,game.PlaceId) then
+    -- loadstring(game:HttpGet("https://raw.githubusercontent.com/FlamesW/NEW/main/SS"))();
+else
+    getgenv().Notify(getgenv().Icon,"Flame's Notification","Bro really tried to use my script on an unsupported game  👏","","",9e9);
+end
